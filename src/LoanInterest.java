@@ -49,7 +49,7 @@ public class LoanInterest {
                     System.out.println("매월 상환액: " + Math.ceil(monthlyPayment) + "원");
                     System.out.println("대출 이자 총액: " + Math.ceil(totalInterest) + "원");
                     System.out.println("대출 총 상환액: " + Math.ceil((principal + totalInterest)) + "원");
-                    break;
+                    return;
                 case "2":
                     double monthlyPrincipalPayment = principal / months;
                     totalInterest = 0;
@@ -63,15 +63,14 @@ public class LoanInterest {
                         System.out.println("월 " + (i + 1) + ": 이자 " + Math.ceil(monthlyInterest) + "원, 원금 "
                                 + Math.ceil(monthlyPrincipalPayment) + "원, 상환액 " + Math.ceil(monthlyPayment) + "원");
                     }
-                    break;
+                    return;
                 case "3":
                     totalInterest = principal * annualInterestRate * months / 12;
                     double totalPayment = principal + totalInterest;
                     System.out.println("대출 이자 총액: " + Math.ceil(totalInterest) + "원");
                     System.out.println("대출 총 상환액: " + Math.ceil(totalPayment) + "원");
-                    break;
+                    return;
             }
-            return;
         }
     }
 

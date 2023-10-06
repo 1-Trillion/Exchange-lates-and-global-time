@@ -1,5 +1,5 @@
 public class DepositView {
-    DepositInterest depositInterest = new DepositInterest();
+    AccountRepository accountRepository = new AccountRepository();
 
     public DepositView() {
         DepositMenu();
@@ -18,6 +18,8 @@ public class DepositView {
                 case "3":
                     break;
                 case "4":
+                    LoanInterest.start();
+                case "5":
                     break;
             }
         }
@@ -34,8 +36,8 @@ public class DepositView {
 
     private void inputdeposit() {
         int deposit = Integer.parseInt(Utility.input("예금할 금액을 입력 해주세요 : "));
-        depositInterest.setDeposit(deposit);
-        depositInterest.showDeposit();
+        accountRepository.setDipositMoney(deposit);
+        accountRepository.showMoney();
         return;
     }
 }

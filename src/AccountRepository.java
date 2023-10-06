@@ -1,8 +1,8 @@
-public class accountRepository {
+public class AccountRepository {
     //예금액
     private int dipositMoney;
 
-    public accountRepository() {
+    public AccountRepository() {
     }
 
     public int getDipositMoney() {
