@@ -1,8 +1,12 @@
 public class AccountRepository {
     //예금액
-    private int dipositMoney;
+    private  static int dipositMoney;
 
     public AccountRepository() {
+    }
+
+    public AccountRepository(int dipositMoney) {
+        this.dipositMoney = dipositMoney;
     }
 
     public int getDipositMoney() {
@@ -14,6 +18,7 @@ public class AccountRepository {
     }
     //예금액 출력
     public void showMoney(){
-        System.out.println(dipositMoney);
+        System.out.println(dipositMoney+"원");
+        return;
     }
 }
