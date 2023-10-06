@@ -17,6 +17,7 @@ public class View {
             case "2":
                 break;
             case "3":
+                DepositView depositView=new DepositView();
                 break;
             case "4":
                 break;
