@@ -19,19 +19,19 @@ public class LoanInterest {
     static void process() {
         while (true) {
             System.out.println("대출 금액을 입력 해주세요.");
-            double principal  = Integer.parseInt(input(">>"));
+            double principal  = Integer.parseInt(Utility.input(">>"));
             if (principal  <= 0) {
                 System.out.println("대출 금액은 1보다 작을 수 없습니다.");
                 continue;
             }
             System.out.println("대출 기간을 입력 해주세요.");
-            int months = Integer.parseInt(input(">>"));
+            int months = Integer.parseInt(Utility.input(">>"));
             if (months <= 0) {
                 System.out.println("대출 기간은 1보다 작을 수 없습니다.");
                 continue;
             }
             System.out.println("연이자율을 입력 해주세요.(%)");
-            double annualInterest  = Double.parseDouble(input(">>"));
+            double annualInterest  = Double.parseDouble(Utility.input(">>"));
             if (annualInterest  <= 0) {
                 System.out.println("연이자율은 1보다 작을 수 없습니다.");
                 continue;
@@ -39,7 +39,7 @@ public class LoanInterest {
             double annualInterestRate =  annualInterest/ 100.0;
 
             selector();
-            String menuNum = input(">>  ");
+            String menuNum = Utility.input(">>  ");
             switch (menuNum) {
                 case "1":
                     double monthlyInterestRate = annualInterestRate / 12;
@@ -49,7 +49,7 @@ public class LoanInterest {
                     System.out.println("매월 상환액: " + Math.ceil(monthlyPayment) + "원");
                     System.out.println("대출 이자 총액: " + Math.ceil(totalInterest) + "원");
                     System.out.println("대출 총 상환액: " + Math.ceil((principal + totalInterest)) + "원");
-                    return;
+                    break;
                 case "2":
                     double monthlyPrincipalPayment = principal / months;
                     totalInterest = 0;
@@ -63,19 +63,16 @@ public class LoanInterest {
                         System.out.println("월 " + (i + 1) + ": 이자 " + Math.ceil(monthlyInterest) + "원, 원금 "
                                 + Math.ceil(monthlyPrincipalPayment) + "원, 상환액 " + Math.ceil(monthlyPayment) + "원");
                     }
-                    return;
+                    break;
                 case "3":
                     totalInterest = principal * annualInterestRate * months / 12;
                     double totalPayment = principal + totalInterest;
                     System.out.println("대출 이자 총액: " + Math.ceil(totalInterest) + "원");
                     System.out.println("대출 총 상환액: " + Math.ceil(totalPayment) + "원");
-                    return;
+                    break;
             }
+            return;
         }
     }
 
-    public static String input(String message) {
-        System.out.print(message);
-        return sc.nextLine();
-    }
 }

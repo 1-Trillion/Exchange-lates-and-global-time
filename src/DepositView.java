@@ -6,9 +6,9 @@ public class DepositView {
     }
 
     private void DepositMenu() {
-        showDeposit();
-        String select = Utility.input("ATM 메뉴를 선택해주세요 : ");
         while (true) {
+            showDeposit();
+            String select = Utility.input("ATM 메뉴를 선택해주세요 : ");
             switch (select) {
                 case "1":
                     inputdeposit();
@@ -19,6 +19,7 @@ public class DepositView {
                     break;
                 case "4":
                     LoanInterest.start();
+                    break;
                 case "5":
                     break;
             }
