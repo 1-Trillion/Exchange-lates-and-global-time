@@ -32,8 +32,7 @@ public class View {
         System.out.println("\n =============== 은행 업무 ===============");
         System.out.println("# 1. 환율 / 환전");
         System.out.println("# 2. 세계 시간");
-        System.out.println("# 3. 예금");
-        System.out.println("# 4. 대출");
-        System.out.println("# 5. 시스템 종료");
+        System.out.println("# 3. ATM 메뉴");
+        System.out.println("# 4. 시스템 종료");
     }
 }
