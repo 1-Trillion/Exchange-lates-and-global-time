@@ -13,6 +13,7 @@ public class View {
 
         switch (menuNum) {
             case "1":
+                ExchangeLate.startExchangeLate();
                 break;
             case "2":
                 break;
