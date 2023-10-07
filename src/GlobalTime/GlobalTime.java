@@ -1,6 +1,5 @@
 package GlobalTime;
 
-import java.awt.event.KeyEvent;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +18,6 @@ public class GlobalTime {
         DateTimeFormatter dateformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         return name + " | " + kt.format(dateformat) + " "+ kt.format(timeFormat) + "\t";
-
     }
 
     public static void main(String[] args) {
@@ -53,7 +51,7 @@ public class GlobalTime {
                 Thread.sleep(1000);
 
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                e. fillInStackTrace();
 
             }
 
