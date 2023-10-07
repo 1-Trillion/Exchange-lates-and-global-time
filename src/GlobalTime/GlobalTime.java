@@ -28,7 +28,7 @@ public class GlobalTime {
             System.out.println("Press Enter to stop...");
             scanner.nextLine(); // 대기하면서 Enter 키 입력 확인
             shouldExit.set(true);
-            scanner.close();
+//            scanner.close();
         });
 
         inputThread.start(); // 입력을 대기하는 스레드 시작
