@@ -21,6 +21,13 @@ public class View {
                 DepositView depositView=new DepositView();
                 break;
             case "4":
+                String answer = Utility.input("# 정말로 종료합니까? [y/n] : ");
+                if (answer.toLowerCase().charAt(0) == 'y') {
+                    System.out.println("# 프로그램을 종료합니다.");
+                    System.exit(0);
+                } else {
+                    break;
+                }
                 break;
             case  "5":
                 break;
