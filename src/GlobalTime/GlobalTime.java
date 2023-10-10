@@ -23,15 +23,23 @@ public class GlobalTime {
     public static void timeAnimating() {
         AtomicBoolean shouldExit = new AtomicBoolean(false);
 
+        String[] imgList = {
+            "\uD83C\uDDF0\uD83C\uDDF7",
+            "\uD83C\uDDE8\uD83C\uDDF3",
+            "\uD83C\uDDEF\uD83C\uDDF5",
+            "\uD83C\uDDFA\uD83C\uDDF8",
+            "\uD83C\uDDE9\uD83C\uDDEA"
+        };
+
+
         Thread inputThread = new Thread(() -> {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Press Enter to stop...");
 
-            System.out.print("\uD83C\uDDF0\uD83C\uDDF7 \t \t \t \t \t \t \t \t");
-            System.out.print("\uD83C\uDDE8\uD83C\uDDF3 \t \t \t \t \t \t \t \t");
-            System.out.print("\uD83C\uDDFA\uD83C\uDDF8 \t \t \t \t \t \t \t \t");
-            System.out.print("\uD83C\uDDEF\uD83C\uDDF5 \t \t \t \t \t \t \t \t");
-            System.out.print("\uD83C\uDDE9\uD83C\uDDEA \t \t \t \t \t \t \t \t");
+            for (String img: imgList) {
+                System.out.print(img);
+                System.out.print("\t \t \t \t \t \t \t \t");
+            }
             System.out.println();
 
             scanner.nextLine(); // 대기하면서 Enter 키 입력 확인
@@ -42,8 +50,7 @@ public class GlobalTime {
         inputThread.start(); // 입력을 대기하는 스레드 시작
 
         StringBuilder output = new StringBuilder();
-
-
+        
         while (!shouldExit.get()) {
             output.setLength(0); // 이전 출력 내용 초기화
 
