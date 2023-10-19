@@ -16,6 +16,7 @@ public class View {
                 ExchangeLate.startExchangeLate();
                 break;
             case "2":
+                GlobalTime.timeAnimating();
                 break;
             case "3":
                 DepositView depositView=new DepositView();

@@ -1,11 +1,11 @@
 public class ExchangeLate {
 
     public final int KRW = 1;
-    public static final int USD = 1350;
-    public static final int JPY = 906;
-    public static final int CNY = 184;
-    public static final int EUR = 1422;
-    public static final int GBP = 1642;
+    public static final int USD = 1355;
+    public static final int JPY = 905;
+    public static final int CNY = 185;
+    public static final int EUR = 1428;
+    public static final int GBP = 1646;
 
     public static void startExchangeLate() {
         Utility.clearScreen();
