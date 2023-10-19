@@ -38,15 +38,25 @@ public class DepositView {
         System.out.println("# 5. 뒤로가기");
     }
     private void inputDeposit(){
-        int deposit = Integer.parseInt(Utility.input("예금할 금액을 입력 해주세요 : "));
-        AccountRepository accountRepository = new AccountRepository(deposit);
-        accountRepository.showMoney();
+        try {
+            int deposit = Integer.parseInt(Utility.input("예금할 금액을 입력 해주세요 : "));
+            AccountRepository accountRepository = new AccountRepository(deposit);
+            accountRepository.showMoney();
+        }catch (NumberFormatException e){
+            System.out.println("숫자가 아닌 값을 입력 하셨습니다.");
+        }
+
     }
     private void withdraw(){
-        int withdraw = Integer.parseInt(Utility.input("출금할 금액을 입력 해주세요 : "));
-        double money= accountRepository.getDipositMoney();
-        int withdrawMoney= (int) (money-withdraw);
-        AccountRepository accountRepository = new AccountRepository(withdrawMoney);
+        try {
+            int withdraw = Integer.parseInt(Utility.input("출금할 금액을 입력 해주세요 : "));
+            double money= accountRepository.getDipositMoney();
+            int withdrawMoney= (int) (money-withdraw);
+            AccountRepository accountRepository = new AccountRepository(withdrawMoney);
+        }catch (NumberFormatException e){
+            System.out.println("숫자가 아닌 값을 입력 하셨습니다.");
+        }
+
     }
 
 }
